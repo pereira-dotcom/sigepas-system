@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S.G.P · Sistema de Gestión de Pasantías | FCEA</title>
+<link rel="icon" type="image/png" href="img/favicon-fcea.png">
+<link rel="stylesheet" href="bt/bootstrap.min.css"><link rel="stylesheet" href="bt-icons/bootstrap-icons.min.css"><link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="loginView" class="login-shell">
+  <section class="login-card">
+    <div class="login-brand"><div class="login-head inst-head"><img class="inst-logo" src="img/logo-unc.png" alt="Universidad Nacional de Concepción"><div class="inst-text"><strong>UNIVERSIDAD NACIONAL DE CONCEPCIÓN</strong><span>Facultad De Ciencias Económicas Y Administrativas</span></div><img class="inst-logo" src="img/logo-fcea.png" alt="FCEA"></div><h1>Gestión de Pasantías</h1><p>Prácticas profesionales, seguimiento y documentación en un solo lugar.</p></div>
+    <form id="loginForm" class="login-form"><label for="loginUser">Usuario</label><div class="input-group mb-3"><span class="input-group-text"><i class="bi bi-person"></i></span><input class="form-control" id="loginUser" autocomplete="username" required></div><label for="loginPass">Contraseña</label><div class="input-group mb-2"><span class="input-group-text"><i class="bi bi-lock"></i></span><input class="form-control" id="loginPass" type="password" autocomplete="current-password" required></div><div class="text-end mb-4"><a href="#" id="forgotLink" class="forgot-link">¿Olvidaste tu contraseña?</a></div><button class="btn btn-primary w-100 py-2" type="submit">Ingresar al sistema <i class="bi bi-arrow-right ms-1"></i></button><div id="loginError" class="text-danger small mt-3"></div><div id="demoAccounts" class="demo-accounts"></div></form>
+  </section>
+</div>
+<div class="modal fade" id="forgotModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="bi bi-key me-2"></i>¿Olvidaste tu contraseña?</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><form id="forgotForm"><div class="modal-body"><p class="small text-muted">Ingrese su usuario o correo. El administrador recibirá su solicitud, verificará su identidad y le asignará una contraseña temporal.</p><label class="form-label" for="forgotId">Usuario o correo electrónico</label><input class="form-control" id="forgotId" autocomplete="username" required><div id="forgotMsg" class="small text-success mt-3"></div></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button><button type="submit" class="btn btn-primary" id="forgotSend">Enviar solicitud</button></div></form></div></div></div>
+<div class="bd-tools" role="group" aria-label="Base de datos"><button type="button" id="btnVerBD" class="bd-btn bd-ver" title="Ver la base de datos"><i class="bi bi-eye"></i></button><button type="button" id="btnCargarBD" class="bd-btn bd-carga" title="Cargar la base de datos (obligatorio para ingresar)"><i class="bi bi-database-check"></i></button><button type="button" id="btnBorrarBD" class="bd-btn bd-borra" title="Eliminar la base de datos"><i class="bi bi-trash3"></i></button></div>
+<div id="bdToasts" class="bd-toasts" aria-live="polite"></div>
+<div class="modal fade" id="bdModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Ver la Base de Datos</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body" id="bdBody"></div><div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button></div></div></div></div>
+<div class="modal fade" id="bdConfirmModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="bi bi-exclamation-triangle text-danger me-2"></i>Eliminar la base de datos</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p class="mb-1">Se borrarán todos los usuarios, pasantes, pasantías y demás registros guardados en este navegador.</p><p class="small text-muted mb-0">Después no podrá ingresar hasta usar el botón «Cargar la base de datos original».</p></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button><button type="button" class="btn btn-danger" id="bdConfirmBtn">Sí, eliminar</button></div></div></div></div>
+<script src="bt/bootstrap.min.js"></script>
+<!-- Lo mínimo del núcleo para ingresar -->
+<script src="js/nucleo/01-config.js"></script>
+<script src="js/nucleo/02-seguridad.js"></script>
+<script src="js/nucleo/03-utilidades.js"></script>
+<script src="js/nucleo/04-datos.js"></script>
+<script src="js/nucleo/05-validaciones.js"></script>
+<!-- Datos iniciales y cuentas de demostración (viven en js/paginas/) -->
+<script src="js/paginas/inicio.js"></script>
+<script src="js/paginas/carreras.js"></script>
+<script src="js/paginas/estudiantes.js"></script>
+<script src="js/paginas/tutores.js"></script>
+<script src="js/paginas/instituciones.js"></script>
+<script src="js/paginas/convenios.js"></script>
+<script src="js/paginas/pasantias.js"></script>
+<script src="js/paginas/seguimientos.js"></script>
+<script src="js/paginas/documentos.js"></script>
+<script src="js/paginas/reportes.js"></script>
+<script src="js/paginas/usuarios.js"></script>
+<!-- Lógica del ingreso -->
+<script src="js/login.js"></script>
+<script src="js/login-bd.js"></script>
+</body></html>

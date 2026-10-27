@@ -1,0 +1,62 @@
+SIGEPAS - FCEA
+Sistema de Información y Seguimiento de Pasantías
+=====================================================
+
+1. USUARIOS Y CONTRASEÑAS REGISTRADOS
+-------------------------------------
+Rol                    Usuario           Contraseña
+---------------------  ----------------  --------------
+Administrador          admin             admin123
+Coordinador            coordinador       coord123
+Docente (tutor acad.)  rosa.gimenez      docente123
+Tutor externo    laura.martinez    tutor123
+Pasante                maria.lopez       estudiante123
+Pasante                juan.benitez      estudiante123
+Pasante                ana.duarte        estudiante123
+
+Nota: el Administrador tiene acceso a todo el sistema (incluye Usuarios y
+Respaldos con restauración). El Coordinador puede ver y crear respaldos.
+
+
+2. PASOS PARA ABRIR EL SOFTWARE
+-------------------------------
+Requisito (una sola vez): tener instalado Node.js versión 16 o superior
+(descarga: https://nodejs.org). Navegador recomendado: Chrome o Edge.
+
+  1. Descomprimir el archivo SIGEPAS_FCEA.zip (clic derecho > Extraer todo).
+  2. Entrar a la carpeta SIGEPAS_FCEA.
+  3. Hacer doble clic en el archivo  iniciar.bat
+     Se abre una ventana negra con el mensaje "SIGEPAS en http://localhost:3000".
+     Esa ventana debe quedar ABIERTA mientras se usa el sistema.
+  4. Abrir el navegador y escribir en la barra de direcciones:
+         http://localhost:3000
+  5. CARGAR LA BASE DE DATOS: el ingreso está bloqueado hasta hacerlo.
+     Pulsar el botón de base de datos con el tilde (abajo a la derecha, parpadea
+     mientras falta). Si ya hay datos guardados, Aceptar los reemplaza por la
+     base original y Cancelar carga los guardados sin cambios.
+  6. Ingresar con alguno de los usuarios de la sección 1
+     (por ejemplo: admin / admin123). En cada nuevo ingreso hay que volver
+     a cargar la base de datos.
+
+Alternativa desde la consola:
+  - Abrir la carpeta SIGEPAS_FCEA, escribir "cmd" en la barra de direcciones
+    del Explorador y presionar Enter.
+  - Ejecutar:  node server.js
+
+Para detener el sistema: cerrar la ventana negra (o presionar Ctrl + C).
+
+
+3. RESPALDOS DE LA BASE DE DATOS
+--------------------------------
+Se accede desde el botón "Respaldos" (arriba a la derecha) con usuario
+admin o coordinador.
+
+  - Manual: botón "Respaldar ahora" (guarda en el servidor, carpeta
+    respaldos/) o "Descargar copia manual (.json)".
+  - Restauración (solo Administrador): botón "Restaurar" junto a cualquier
+    archivo de la lista, o "Restaurar desde archivo".
+  - Automático en el mismo servidor: cada 120 segundos se genera un archivo
+    en la carpeta respaldos/ con fecha y hora en el nombre, por ejemplo:
+        respaldo_2026-10-26_17-30-00_auto.json
+    (funciona mientras haya una sesión de Administrador o Coordinador abierta).
+  - Nube: ver README_PASANTIAS.md, sección "Respaldo de la base de datos".
